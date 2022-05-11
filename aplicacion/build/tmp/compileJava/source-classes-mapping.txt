@@ -1,0 +1,20 @@
+com/ceiba/clientes/comando/fabrica/FabricaClientes.java
+ com.ceiba.clientes.comando.fabrica.FabricaClientes
+com/ceiba/planes/comando/manejador/ManejadorListarPlanes.java
+ com.ceiba.planes.comando.manejador.ManejadorListarPlanes
+com/ceiba/planes/comando/fabrica/FabricaPlanes.java
+ com.ceiba.planes.comando.fabrica.FabricaPlanes
+com/ceiba/clientes/comando/manejador/ManejadorCrearCliente.java
+ com.ceiba.clientes.comando.manejador.ManejadorCrearCliente
+com/ceiba/planes/comando/manejador/ManejadorCrearPlanes.java
+ com.ceiba.planes.comando.manejador.ManejadorCrearPlanes
+com/ceiba/clientes/comando/manejador/ManejadorEliminarCliente.java
+ com.ceiba.clientes.comando.manejador.ManejadorEliminarCliente
+com/ceiba/planes/comando/ComandoPlanes.java
+ com.ceiba.planes.comando.ComandoPlanes
+com/ceiba/clientes/comando/manejador/ManejadorConsultarCliente.java
+ com.ceiba.clientes.comando.manejador.ManejadorConsultarCliente
+com/ceiba/clientes/comando/ComandoClientes.java
+ com.ceiba.clientes.comando.ComandoClientes
+com/ceiba/clientes/comando/manejador/ManejadorActualizarCliente.java
+ com.ceiba.clientes.comando.manejador.ManejadorActualizarCliente

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SonarLintProjectSettings">
+    <option name="fileExclusions">
+      <list>
+        <option value="DIRECTORY:aplicacion" />
+        <option value="DIRECTORY:comun" />
+        <option value="DIRECTORY:dominio" />
+        <option value="DIRECTORY:infraestructura" />
+        <option value="DIRECTORY:comun/comun-aplicacion" />
+        <option value="DIRECTORY:comun/comun-dominio" />
+        <option value="DIRECTORY:comun/comun-infraestructura" />
+        <option value="DIRECTORY:comun/comun-test" />
+        <option value="DIRECTORY:src/main" />
+        <option value="DIRECTORY:aplicacion/build/generated/sources/annotationProcessor/java/main" />
+        <option value="DIRECTORY:aplicacion/src/main" />
+        <option value="DIRECTORY:dominio/src/test" />
+        <option value="DIRECTORY:dominio/build/generated/sources/annotationProcessor/java/main" />
+        <option value="DIRECTORY:dominio/src/main" />
+        <option value="DIRECTORY:infraestructura/src/test" />
+        <option value="DIRECTORY:infraestructura/src/main" />
+        <option value="DIRECTORY:comun/comun-aplicacion/src/main" />
+        <option value="DIRECTORY:comun/comun-dominio/src/main" />
+        <option value="DIRECTORY:comun/comun-infraestructura/src/main" />
+        <option value="DIRECTORY:comun/comun-test/src/main" />
+      </list>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,1 @@
+select count(1) from clientes where numero_identificacion = :documentNumber and numero_telefono = :phoneNumber

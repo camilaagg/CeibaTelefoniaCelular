@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ComandoControladorClientes.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.clientes.controlador</a> &gt; <span class="el_source">ComandoControladorClientes.java</span></div><h1>ComandoControladorClientes.java</h1><pre class="source lang-java linenums">package com.ceiba.clientes.controlador;
+
+
+import com.ceiba.ComandoRespuesta;
+import com.ceiba.clientes.comando.ComandoClientes;
+import com.ceiba.clientes.comando.manejador.ManejadorActualizarCliente;
+import com.ceiba.clientes.comando.manejador.ManejadorConsultarCliente;
+import com.ceiba.clientes.comando.manejador.ManejadorCrearCliente;
+import com.ceiba.clientes.comando.manejador.ManejadorEliminarCliente;
+import com.ceiba.clientes.modelo.dto.DtoClientes;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/clientes&quot;)
+@Api(tags = { &quot;Controlador comando clientes&quot;})
+public class ComandoControladorClientes {
+
+    private final ManejadorConsultarCliente consulterClient;
+
+    private final ManejadorCrearCliente createClient;
+
+    private final ManejadorActualizarCliente updateCliente;
+
+    private final ManejadorEliminarCliente eliminateClient;
+
+<span class="fc" id="L28">    public ComandoControladorClientes(ManejadorConsultarCliente consulterClient, ManejadorCrearCliente createClient, ManejadorActualizarCliente updateCliente, ManejadorEliminarCliente eliminateClient) {</span>
+<span class="fc" id="L29">        this.consulterClient = consulterClient;</span>
+<span class="fc" id="L30">        this.createClient = createClient;</span>
+<span class="fc" id="L31">        this.updateCliente = updateCliente;</span>
+<span class="fc" id="L32">        this.eliminateClient = eliminateClient;</span>
+<span class="fc" id="L33">    }</span>
+
+    @GetMapping(value= &quot;/{documentNumber}/{phoneNumber}&quot;)
+    @ApiOperation(&quot;Obtener cliente&quot;)
+    public DtoClientes obtenerCliente(@PathVariable String documentNumber, @PathVariable String phoneNumber) {
+<span class="nc" id="L38">        return this.consulterClient.ejecutar(documentNumber, phoneNumber);</span>
+    }
+
+    @PostMapping(value = &quot;/create&quot;)
+    @ApiOperation(&quot;Crear Clientes&quot;)
+    public ComandoRespuesta&lt;Long&gt; crearClientes(@RequestBody ComandoClientes comandoClientes) {
+
+<span class="nc" id="L45">        return createClient.ejecutar(comandoClientes);</span>
+    }
+
+    @DeleteMapping(value=&quot;/{id}&quot;)
+    @ApiOperation(&quot;Eliminar Usuario&quot;)
+    public void eliminarCliente(@PathVariable Long id) {
+
+<span class="nc" id="L52">        eliminateClient.ejecutar(id);</span>
+
+
+<span class="nc" id="L55">    }</span>
+
+    @PutMapping(value=&quot;/update&quot;)
+    @ApiOperation(&quot;Actualizar Usuario&quot;)
+    public void actualizarCliente(@RequestBody ComandoClientes comandoClientes) {
+
+<span class="nc" id="L61">        updateCliente.ejecutar(comandoClientes);</span>
+
+<span class="nc" id="L63">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

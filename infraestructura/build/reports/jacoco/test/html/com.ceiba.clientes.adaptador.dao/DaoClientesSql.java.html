@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DaoClientesSql.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.clientes.adaptador.dao</a> &gt; <span class="el_source">DaoClientesSql.java</span></div><h1>DaoClientesSql.java</h1><pre class="source lang-java linenums">package com.ceiba.clientes.adaptador.dao;
+
+import com.ceiba.clientes.modelo.dto.DtoClientes;
+import com.ceiba.clientes.puerto.dao.DaoCliente;
+import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
+import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
+import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
+import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.planes.modelo.dto.DtoPlanes;
+import com.ceiba.usuario.modelo.entidad.Usuario;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+public class DaoClientesSql implements DaoCliente {
+
+    private static final String NO_EXISTE_CLIENTE = &quot;No existe el cliente en el sistema&quot;;
+
+    private static final String CLIENTE_EXISTE_MAS_DE_UNA_VEZ = &quot;El cliente existe mas de una vez&quot;;
+
+    private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
+
+    @SqlStatement(namespace = &quot;clientes&quot;, value = &quot;consultar_cliente&quot;)
+    private static String sqlConsultarCliente;
+
+<span class="fc" id="L29">    public DaoClientesSql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L31">    }</span>
+
+
+    @Override
+    public DtoClientes listarClientes(String documentNumber, String phoneNumber) {
+
+<span class="nc" id="L37">        DtoClientes Client = new DtoClientes();</span>
+
+<span class="nc" id="L39">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L40">        paramSource.addValue(&quot;identificationNumber&quot;, documentNumber);</span>
+<span class="nc" id="L41">        paramSource.addValue(&quot;phoneNumber&quot;, phoneNumber);</span>
+
+<span class="nc" id="L43">        List&lt;DtoClientes&gt; list = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlConsultarCliente, paramSource, new MapeoClientes());</span>
+
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        if (list.size() &gt; 1) {</span>
+
+<span class="nc" id="L47">            throw new ExcepcionDuplicidad(CLIENTE_EXISTE_MAS_DE_UNA_VEZ);</span>
+
+<span class="nc bnc" id="L49" title="All 2 branches missed.">        } else if (list.size() == 0) {</span>
+
+<span class="nc" id="L51">            throw new ExcepcionSinDatos(NO_EXISTE_CLIENTE);</span>
+
+        } else {
+
+<span class="nc" id="L55">            new DtoClientes(list.get(0).getId(), list.get(0).getDocumentType(), list.get(0).getDocumentNumber(), list.get(0).getClientName(), list.get(0).getPhoneNumber(), list.get(0).getNamePlan(), list.get(0).getValuePlan(), list.get(0).getTime());</span>
+
+
+        }
+
+
+<span class="nc" id="L61">        return Client;</span>
+
+
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

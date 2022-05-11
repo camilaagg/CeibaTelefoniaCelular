@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapeoClientes.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.clientes.adaptador.dao</a> &gt; <span class="el_source">MapeoClientes.java</span></div><h1>MapeoClientes.java</h1><pre class="source lang-java linenums">package com.ceiba.clientes.adaptador.dao;
+
+import com.ceiba.clientes.modelo.dto.DtoClientes;
+import com.ceiba.infraestructura.jdbc.MapperResult;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.KeyHolder;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+
+<span class="nc" id="L12">public class MapeoClientes implements RowMapper&lt;DtoClientes&gt;, MapperResult {</span>
+
+    @Override
+    public DtoClientes mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+
+<span class="nc" id="L17">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L18">        String documentType = resultSet.getString(&quot;tipo_identificacion&quot;);</span>
+<span class="nc" id="L19">        String documentNumber = resultSet.getString(&quot;numero_identificacion&quot;);</span>
+<span class="nc" id="L20">        String nameClient = resultSet.getString(&quot;nombre_cliente&quot;);</span>
+<span class="nc" id="L21">        String phoneNumber = resultSet.getString(&quot;numero_telefono&quot;);</span>
+<span class="nc" id="L22">        String namePlan = resultSet.getString(&quot;nombre_plan&quot;);</span>
+<span class="nc" id="L23">        String valuePlan = resultSet.getString(&quot;valor_plan&quot;);</span>
+
+
+<span class="nc" id="L26">        Long time = diffDays(resultSet, &quot;fecha_inicio&quot;);</span>
+
+<span class="nc" id="L28">        return new DtoClientes(id,documentType,documentNumber,nameClient, phoneNumber,namePlan,valuePlan, time );</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

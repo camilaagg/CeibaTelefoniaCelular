@@ -1,0 +1,10 @@
+com/ceiba/ApplicationMock.java
+ com.ceiba.ApplicationMock
+com/ceiba/usuario/servicio/testdatabuilder/ComandoPlanesTestDataBuilder.java
+ com.ceiba.usuario.servicio.testdatabuilder.ComandoPlanesTestDataBuilder
+com/ceiba/usuario/servicio/testdatabuilder/ComandoClientesTestDataBuilder.java
+ com.ceiba.usuario.servicio.testdatabuilder.ComandoClientesTestDataBuilder
+com/ceiba/usuario/controlador/ComandoControladorPlanesTest.java
+ com.ceiba.usuario.controlador.ComandoControladorPlanesTest
+com/ceiba/usuario/controlador/ComandoControladorClienteTest.java
+ com.ceiba.usuario.controlador.ComandoControladorClienteTest

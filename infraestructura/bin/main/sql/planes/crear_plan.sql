@@ -1,0 +1,1 @@
+insert into planes (nombre_plan, valor_plan,especificaciones_plan) values (:namePlan, :valuePlan, :specificationPlan)

@@ -1,0 +1,2 @@
+select id,nombre_plan,valor_plan,especificaciones_plan
+from planes

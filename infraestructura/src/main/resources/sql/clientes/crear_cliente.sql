@@ -1,0 +1,1 @@
+insert into clientes (tipo_identificacion, numero_identificacion,nombre_cliente, numero_telefono, id_plan, valor_plan, fecha_inicio) values (:documentType, :documentNumber, :clientName, :phoneNumber, :planId, :planValue, :startDate)

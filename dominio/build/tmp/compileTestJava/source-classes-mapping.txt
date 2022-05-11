@@ -1,0 +1,19 @@
+com/ceiba/clientes/servicio/ServicioActualizarClienteTest.java
+ com.ceiba.clientes.servicio.ServicioActualizarClienteTest
+com/ceiba/BasePrueba.java
+ com.ceiba.BasePrueba
+ com.ceiba.BasePrueba$Thunk
+com/ceiba/clientes/servicio/testdatabuilder/ClientesTestDataBuilder.java
+ com.ceiba.clientes.servicio.testdatabuilder.ClientesTestDataBuilder
+com/ceiba/planes/entidad/PlanesTest.java
+ com.ceiba.planes.entidad.PlanesTest
+com/ceiba/planes/servicio/ServicioCrearPlanesTest.java
+ com.ceiba.planes.servicio.ServicioCrearPlanesTest
+com/ceiba/clientes/servicio/ServicioEliminarClienteTest.java
+ com.ceiba.clientes.servicio.ServicioEliminarClienteTest
+com/ceiba/planes/servicio/testdatabuilder/PlanesTestDataBuilder.java
+ com.ceiba.planes.servicio.testdatabuilder.PlanesTestDataBuilder
+com/ceiba/clientes/servicio/ServicioCrearClienteTest.java
+ com.ceiba.clientes.servicio.ServicioCrearClienteTest
+com/ceiba/clientes/entidad/ClientesTest.java
+ com.ceiba.clientes.entidad.ClientesTest
