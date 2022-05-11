@@ -3,26 +3,22 @@
 
 import com.ceiba.clientes.comando.ComandoClientes;
 import com.ceiba.clientes.modelo.entidad.Clientes;
-import com.ceiba.planes.comando.ComandoPlanes;
-import com.ceiba.planes.modelo.entidad.Planes;
-import com.ceiba.usuario.comando.ComandoUsuario;
-import com.ceiba.usuario.modelo.entidad.Usuario;
 import org.springframework.stereotype.Component;
 
 @Component
-<span class="fc" id="L13">public class FabricaClientes {</span>
+<span class="fc" id="L9">public class FabricaClientes {</span>
 
     public Clientes crearCliente(ComandoClientes comandoClientes) {
 
-<span class="nc" id="L17">        return new Clientes(</span>
-<span class="nc" id="L18">                comandoClientes.getId(),</span>
-<span class="nc" id="L19">                comandoClientes.getDocumentType(),</span>
-<span class="nc" id="L20">                comandoClientes.getDocumentNumber(),</span>
-<span class="nc" id="L21">                comandoClientes.getClientName(),</span>
-<span class="nc" id="L22">                comandoClientes.getPhoneNumber(),</span>
-<span class="nc" id="L23">                comandoClientes.getPlanId(),</span>
-<span class="nc" id="L24">                comandoClientes.getPlanValue(),</span>
-<span class="nc" id="L25">                comandoClientes.getStartDate()</span>
+<span class="fc" id="L13">        return new Clientes(</span>
+<span class="fc" id="L14">                comandoClientes.getId(),</span>
+<span class="fc" id="L15">                comandoClientes.getDocumentType(),</span>
+<span class="fc" id="L16">                comandoClientes.getDocumentNumber(),</span>
+<span class="fc" id="L17">                comandoClientes.getClientName(),</span>
+<span class="fc" id="L18">                comandoClientes.getPhoneNumber(),</span>
+<span class="fc" id="L19">                comandoClientes.getPlanId(),</span>
+<span class="fc" id="L20">                comandoClientes.getPlanValue(),</span>
+<span class="fc" id="L21">                comandoClientes.getStartDate()</span>
         );
     }
 

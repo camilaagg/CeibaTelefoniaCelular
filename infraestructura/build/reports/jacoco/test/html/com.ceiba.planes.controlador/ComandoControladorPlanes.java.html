@@ -30,14 +30,14 @@ public class ComandoControladorPlanes {
     @ApiOperation(&quot;Listar Planes&quot;)
     public List&lt;DtoPlanes&gt; listarPlanes(@PathVariable Long days) {
 
-<span class="nc" id="L33">        return this.manejadorListarPlanes.ejecutar(days);</span>
+<span class="fc" id="L33">        return this.manejadorListarPlanes.ejecutar(days);</span>
     }
 
     @PostMapping(value = &quot;/create&quot;)
     @ApiOperation(&quot;Crear Planes&quot;)
     public ComandoRespuesta&lt;Long&gt; crearPlanes(@RequestBody ComandoPlanes comandoPlanes) {
 
-<span class="nc" id="L40">        return manejadorCrearPlanes.ejecutar(comandoPlanes);</span>
+<span class="fc" id="L40">        return manejadorCrearPlanes.ejecutar(comandoPlanes);</span>
     }
 
 }

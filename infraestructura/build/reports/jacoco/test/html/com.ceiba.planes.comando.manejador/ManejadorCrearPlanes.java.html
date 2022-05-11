@@ -23,8 +23,8 @@ public class ManejadorCrearPlanes implements ManejadorComandoRespuesta&lt;Comand
 
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoPlanes comandoPlanes) {
 
-<span class="nc" id="L26">        Planes planes = this.fabricaPlanes.crearPlanes(comandoPlanes);</span>
-<span class="nc" id="L27">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPlanes.execute(planes));</span>
+<span class="fc" id="L26">        Planes planes = this.fabricaPlanes.crearPlanes(comandoPlanes);</span>
+<span class="fc" id="L27">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPlanes.execute(planes));</span>
 
 
     }

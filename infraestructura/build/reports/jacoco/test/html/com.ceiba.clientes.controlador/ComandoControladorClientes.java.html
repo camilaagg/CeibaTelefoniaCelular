@@ -35,31 +35,31 @@ public class ComandoControladorClientes {
     @GetMapping(value= &quot;/{documentNumber}/{phoneNumber}&quot;)
     @ApiOperation(&quot;Obtener cliente&quot;)
     public DtoClientes obtenerCliente(@PathVariable String documentNumber, @PathVariable String phoneNumber) {
-<span class="nc" id="L38">        return this.consulterClient.ejecutar(documentNumber, phoneNumber);</span>
+<span class="fc" id="L38">        return this.consulterClient.ejecutar(documentNumber, phoneNumber);</span>
     }
 
     @PostMapping(value = &quot;/create&quot;)
     @ApiOperation(&quot;Crear Clientes&quot;)
     public ComandoRespuesta&lt;Long&gt; crearClientes(@RequestBody ComandoClientes comandoClientes) {
 
-<span class="nc" id="L45">        return createClient.ejecutar(comandoClientes);</span>
+<span class="fc" id="L45">        return createClient.ejecutar(comandoClientes);</span>
     }
 
     @DeleteMapping(value=&quot;/{id}&quot;)
     @ApiOperation(&quot;Eliminar Usuario&quot;)
     public void eliminarCliente(@PathVariable Long id) {
 
-<span class="nc" id="L52">        eliminateClient.ejecutar(id);</span>
+<span class="fc" id="L52">        eliminateClient.ejecutar(id);</span>
 
 
-<span class="nc" id="L55">    }</span>
+<span class="fc" id="L55">    }</span>
 
     @PutMapping(value=&quot;/update&quot;)
     @ApiOperation(&quot;Actualizar Usuario&quot;)
     public void actualizarCliente(@RequestBody ComandoClientes comandoClientes) {
 
-<span class="nc" id="L61">        updateCliente.ejecutar(comandoClientes);</span>
+<span class="fc" id="L61">        updateCliente.ejecutar(comandoClientes);</span>
 
-<span class="nc" id="L63">    }</span>
+<span class="fc" id="L63">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

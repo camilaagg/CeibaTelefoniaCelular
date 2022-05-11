@@ -6,48 +6,31 @@ import com.ceiba.clientes.servicio.ServicioCrearCliente;
 import com.ceiba.clientes.servicio.ServicioEliminarCliente;
 import com.ceiba.planes.puerto.repositorio.RepositorioPlanes;
 import com.ceiba.planes.servicio.ServicioCrearPlanes;
-import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
-import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
-import com.ceiba.usuario.servicio.ServicioCrearUsuario;
-import com.ceiba.usuario.servicio.ServicioEliminarUsuario;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-<span class="fc" id="L17">public class BeanServicio {</span>
+<span class="fc" id="L13">public class BeanServicio {</span>
 
-    @Bean
-    public ServicioCrearUsuario servicioCrearUsuario(RepositorioUsuario repositorioUsuario) {
-<span class="fc" id="L21">        return new ServicioCrearUsuario(repositorioUsuario);</span>
-    }
 
-    @Bean
-    public ServicioEliminarUsuario servicioEliminarUsuario(RepositorioUsuario repositorioUsuario) {
-<span class="fc" id="L26">        return new ServicioEliminarUsuario(repositorioUsuario);</span>
-    }
-
-    @Bean
-    public ServicioActualizarUsuario servicioActualizarUsuario(RepositorioUsuario repositorioUsuario) {
-<span class="fc" id="L31">        return new ServicioActualizarUsuario(repositorioUsuario);</span>
-    }
 
     @Bean
     public ServicioCrearPlanes servicioCrearPlan(RepositorioPlanes repositorioPlanes) {
-<span class="fc" id="L36">        return new ServicioCrearPlanes(repositorioPlanes);</span>
+<span class="fc" id="L19">        return new ServicioCrearPlanes(repositorioPlanes);</span>
     }
 
     @Bean
     public ServicioCrearCliente servicioCrearCliente(RepositorioClientes repositorioClientes) {
-<span class="fc" id="L41">        return new ServicioCrearCliente(repositorioClientes);</span>
+<span class="fc" id="L24">        return new ServicioCrearCliente(repositorioClientes);</span>
     }
 
     @Bean
     public ServicioActualizarCliente servicioActualizarCliente(RepositorioClientes repositorioClientes) {
-<span class="fc" id="L46">        return new ServicioActualizarCliente(repositorioClientes);</span>
+<span class="fc" id="L29">        return new ServicioActualizarCliente(repositorioClientes);</span>
     }
     @Bean
     public ServicioEliminarCliente servicioEliminarCliente(RepositorioClientes repositorioClientes) {
-<span class="fc" id="L50">        return new ServicioEliminarCliente(repositorioClientes);</span>
+<span class="fc" id="L33">        return new ServicioEliminarCliente(repositorioClientes);</span>
     }
 	
 

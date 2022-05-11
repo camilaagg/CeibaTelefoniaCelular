@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.clientes.entidad.ClientesTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-05-11T14:45:12" hostname="CAMILA-GUTIERRE" time="0.073">
+  <properties/>
+  <testcase name="deberiaFallarSinNumeroDeDocumento()" classname="com.ceiba.clientes.entidad.ClientesTest" time="0.063"/>
+  <testcase name="Deberia crear correctamente el cliente" classname="com.ceiba.clientes.entidad.ClientesTest" time="0.005"/>
+  <testcase name="deberiaFallarSinTipoDeDocumento()" classname="com.ceiba.clientes.entidad.ClientesTest" time="0.001"/>
+  <testcase name="deberiaFallarSinNombreDeCliente()" classname="com.ceiba.clientes.entidad.ClientesTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

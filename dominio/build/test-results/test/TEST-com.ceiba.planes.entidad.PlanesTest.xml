@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.planes.entidad.PlanesTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-05-11T14:45:14" hostname="CAMILA-GUTIERRE" time="0.008">
+  <properties/>
+  <testcase name="deberiaFallarSinNombreDePlan()" classname="com.ceiba.planes.entidad.PlanesTest" time="0.002"/>
+  <testcase name="deberiaFallarSinValorDelPlan()" classname="com.ceiba.planes.entidad.PlanesTest" time="0.002"/>
+  <testcase name="Deberia crear correctamente el plan" classname="com.ceiba.planes.entidad.PlanesTest" time="0.0"/>
+  <testcase name="deberiaFallarSinEspecificacionDePlan()" classname="com.ceiba.planes.entidad.PlanesTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

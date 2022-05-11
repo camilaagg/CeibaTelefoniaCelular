@@ -34,36 +34,36 @@ public class RepositorioClientesSql implements RepositorioClientes {
 
     @Override
     public Long crearCliente(Clientes client) {
-<span class="nc" id="L37">        return this.customNamedParameterJdbcTemplate.crearCliente(client, sqlCrearCliente);</span>
+<span class="fc" id="L37">        return this.customNamedParameterJdbcTemplate.crearCliente(client, sqlCrearCliente);</span>
     }
 
     @Override
     public void actualizarClientes(Clientes client) {
-<span class="nc" id="L42">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L43">        paramSource.addValue(&quot;id&quot;, client.getId());</span>
-<span class="nc" id="L44">        paramSource.addValue(&quot;planId&quot;, client.getPlanId());</span>
-<span class="nc" id="L45">        paramSource.addValue(&quot;planValue&quot;, client.getPlanValue());</span>
+<span class="fc" id="L42">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L43">        paramSource.addValue(&quot;id&quot;, client.getId());</span>
+<span class="fc" id="L44">        paramSource.addValue(&quot;planId&quot;, client.getPlanId());</span>
+<span class="fc" id="L45">        paramSource.addValue(&quot;planValue&quot;, client.getPlanValue());</span>
 
-<span class="nc" id="L47">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarCliente, paramSource);</span>
+<span class="fc" id="L47">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarCliente, paramSource);</span>
 
-<span class="nc" id="L49">    }</span>
+<span class="fc" id="L49">    }</span>
 
     @Override
     public void eliminarClientes(Long id) {
-<span class="nc" id="L53">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L54">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L53">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L54">        paramSource.addValue(&quot;id&quot;, id);</span>
 
-<span class="nc" id="L56">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminarCliente, paramSource);</span>
+<span class="fc" id="L56">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminarCliente, paramSource);</span>
 
-<span class="nc" id="L58">    }</span>
+<span class="fc" id="L58">    }</span>
 
     @Override
     public boolean existeCliente(String documentNumber, String phoneNumber) {
-<span class="nc" id="L62">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L63">        paramSource.addValue(&quot;documentNumber&quot;, documentNumber);</span>
-<span class="nc" id="L64">        paramSource.addValue(&quot;phoneNumber&quot;, phoneNumber);</span>
+<span class="fc" id="L62">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L63">        paramSource.addValue(&quot;documentNumber&quot;, documentNumber);</span>
+<span class="fc" id="L64">        paramSource.addValue(&quot;phoneNumber&quot;, phoneNumber);</span>
 
-<span class="nc" id="L66">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteCliente,paramSource, Boolean.class);</span>
+<span class="fc" id="L66">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteCliente,paramSource, Boolean.class);</span>
     }
 
 

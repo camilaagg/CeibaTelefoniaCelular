@@ -6,12 +6,9 @@ import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.planes.modelo.dto.DtoPlanes;
-import com.ceiba.usuario.modelo.entidad.Usuario;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -26,39 +23,39 @@ public class DaoClientesSql implements DaoCliente {
     @SqlStatement(namespace = &quot;clientes&quot;, value = &quot;consultar_cliente&quot;)
     private static String sqlConsultarCliente;
 
-<span class="fc" id="L29">    public DaoClientesSql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="fc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L31">    }</span>
+<span class="fc" id="L26">    public DaoClientesSql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L27">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L28">    }</span>
 
 
     @Override
     public DtoClientes listarClientes(String documentNumber, String phoneNumber) {
 
-<span class="nc" id="L37">        DtoClientes Client = new DtoClientes();</span>
+<span class="fc" id="L34">        DtoClientes client = new DtoClientes();</span>
 
-<span class="nc" id="L39">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L40">        paramSource.addValue(&quot;identificationNumber&quot;, documentNumber);</span>
-<span class="nc" id="L41">        paramSource.addValue(&quot;phoneNumber&quot;, phoneNumber);</span>
+<span class="fc" id="L36">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L37">        paramSource.addValue(&quot;identificationNumber&quot;, documentNumber);</span>
+<span class="fc" id="L38">        paramSource.addValue(&quot;phoneNumber&quot;, phoneNumber);</span>
 
-<span class="nc" id="L43">        List&lt;DtoClientes&gt; list = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlConsultarCliente, paramSource, new MapeoClientes());</span>
+<span class="fc" id="L40">        List&lt;DtoClientes&gt; list = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlConsultarCliente, paramSource, new MapeoClientes());</span>
 
-<span class="nc bnc" id="L45" title="All 2 branches missed.">        if (list.size() &gt; 1) {</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        if (list.size() &gt; 1) {</span>
 
-<span class="nc" id="L47">            throw new ExcepcionDuplicidad(CLIENTE_EXISTE_MAS_DE_UNA_VEZ);</span>
+<span class="nc" id="L44">            throw new ExcepcionDuplicidad(CLIENTE_EXISTE_MAS_DE_UNA_VEZ);</span>
 
-<span class="nc bnc" id="L49" title="All 2 branches missed.">        } else if (list.size() == 0) {</span>
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">        } else if (list.isEmpty()) {</span>
 
-<span class="nc" id="L51">            throw new ExcepcionSinDatos(NO_EXISTE_CLIENTE);</span>
+<span class="nc" id="L48">            throw new ExcepcionSinDatos(NO_EXISTE_CLIENTE);</span>
 
         } else {
 
-<span class="nc" id="L55">            new DtoClientes(list.get(0).getId(), list.get(0).getDocumentType(), list.get(0).getDocumentNumber(), list.get(0).getClientName(), list.get(0).getPhoneNumber(), list.get(0).getNamePlan(), list.get(0).getValuePlan(), list.get(0).getTime());</span>
+<span class="fc" id="L52">           client =  new DtoClientes(list.get(0).getId(), list.get(0).getDocumentType(), list.get(0).getDocumentNumber(), list.get(0).getClientName(), list.get(0).getPhoneNumber(), list.get(0).getNamePlan(), list.get(0).getValuePlan(), list.get(0).getTime());</span>
 
 
         }
 
 
-<span class="nc" id="L61">        return Client;</span>
+<span class="fc" id="L58">        return client;</span>
 
 
     }

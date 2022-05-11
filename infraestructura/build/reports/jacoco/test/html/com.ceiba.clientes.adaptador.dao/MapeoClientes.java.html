@@ -3,29 +3,27 @@
 import com.ceiba.clientes.modelo.dto.DtoClientes;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.support.KeyHolder;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 
-<span class="nc" id="L12">public class MapeoClientes implements RowMapper&lt;DtoClientes&gt;, MapperResult {</span>
+<span class="fc" id="L10">public class MapeoClientes implements RowMapper&lt;DtoClientes&gt;, MapperResult {</span>
 
     @Override
     public DtoClientes mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="nc" id="L17">        Long id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="nc" id="L18">        String documentType = resultSet.getString(&quot;tipo_identificacion&quot;);</span>
-<span class="nc" id="L19">        String documentNumber = resultSet.getString(&quot;numero_identificacion&quot;);</span>
-<span class="nc" id="L20">        String nameClient = resultSet.getString(&quot;nombre_cliente&quot;);</span>
-<span class="nc" id="L21">        String phoneNumber = resultSet.getString(&quot;numero_telefono&quot;);</span>
-<span class="nc" id="L22">        String namePlan = resultSet.getString(&quot;nombre_plan&quot;);</span>
-<span class="nc" id="L23">        String valuePlan = resultSet.getString(&quot;valor_plan&quot;);</span>
+<span class="fc" id="L15">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="fc" id="L16">        String documentType = resultSet.getString(&quot;tipo_identificacion&quot;);</span>
+<span class="fc" id="L17">        String documentNumber = resultSet.getString(&quot;numero_identificacion&quot;);</span>
+<span class="fc" id="L18">        String nameClient = resultSet.getString(&quot;nombre_cliente&quot;);</span>
+<span class="fc" id="L19">        String phoneNumber = resultSet.getString(&quot;numero_telefono&quot;);</span>
+<span class="fc" id="L20">        String namePlan = resultSet.getString(&quot;nombre_plan&quot;);</span>
+<span class="fc" id="L21">        String valuePlan = resultSet.getString(&quot;valor_plan&quot;);</span>
 
 
-<span class="nc" id="L26">        Long time = diffDays(resultSet, &quot;fecha_inicio&quot;);</span>
+<span class="fc" id="L24">        Long time = diffDays(resultSet, &quot;fecha_inicio&quot;);</span>
 
-<span class="nc" id="L28">        return new DtoClientes(id,documentType,documentNumber,nameClient, phoneNumber,namePlan,valuePlan, time );</span>
+<span class="fc" id="L26">        return new DtoClientes(id,documentType,documentNumber,nameClient, phoneNumber,namePlan,valuePlan, time );</span>
     }
 
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Planes.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.planes.modelo.entidad</a> &gt; <span class="el_source">Planes.java</span></div><h1>Planes.java</h1><pre class="source lang-java linenums">package com.ceiba.planes.modelo.entidad;
+
+import lombok.Getter;
+
+import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
+
+@Getter
+public class Planes {
+
+    private static final String SE_DEBE_INGRESAR_EL_VALOR_DEL_PLAN= &quot;Se debe ingresar el valor del plan&quot;;
+    private static final String SE_DEBE_INGRESAR_LA_ESPECIFICACION_DEL_PLAN = &quot;Se debe ingresar la especificacion del plan&quot;;
+    private static final String SE_DEBE_INGRESAR_EL_NOMBRE_DEL_PLAN = &quot;Se debe ingresar el nombre de plan&quot;;
+
+<span class="fc" id="L14">    private Long id;</span>
+<span class="fc" id="L15">    private String namePlan;</span>
+<span class="fc" id="L16">    private String valuePlan;</span>
+<span class="fc" id="L17">    private String specificationPlan;</span>
+
+
+<span class="fc" id="L20">    public Planes(Long id, String namePlan, String valuePlan, String specificationPlan) {</span>
+
+<span class="fc" id="L22">        validarObligatorio(namePlan, SE_DEBE_INGRESAR_EL_NOMBRE_DEL_PLAN);</span>
+<span class="fc" id="L23">        validarObligatorio(valuePlan, SE_DEBE_INGRESAR_EL_VALOR_DEL_PLAN);</span>
+<span class="fc" id="L24">        validarObligatorio(specificationPlan, SE_DEBE_INGRESAR_LA_ESPECIFICACION_DEL_PLAN);</span>
+<span class="fc" id="L25">        this.id = id;</span>
+<span class="fc" id="L26">        this.namePlan = namePlan;</span>
+<span class="fc" id="L27">        this.valuePlan = valuePlan;</span>
+<span class="fc" id="L28">        this.specificationPlan = specificationPlan;</span>
+<span class="fc" id="L29">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

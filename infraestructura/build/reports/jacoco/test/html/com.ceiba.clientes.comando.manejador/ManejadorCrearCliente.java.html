@@ -6,9 +6,6 @@ import com.ceiba.clientes.comando.fabrica.FabricaClientes;
 import com.ceiba.clientes.modelo.entidad.Clientes;
 import com.ceiba.clientes.servicio.ServicioCrearCliente;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
-import com.ceiba.planes.comando.ComandoPlanes;
-import com.ceiba.planes.comando.fabrica.FabricaPlanes;
-import com.ceiba.planes.modelo.entidad.Planes;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,16 +16,16 @@ public class ManejadorCrearCliente implements ManejadorComandoRespuesta&lt;Coman
     private final ServicioCrearCliente servicioCrearCliente;
 
 
-<span class="fc" id="L22">    public ManejadorCrearCliente( FabricaClientes fabricaClientes, ServicioCrearCliente servicioCrearCliente) {</span>
-<span class="fc" id="L23">        this.fabricaClientes = fabricaClientes;</span>
-<span class="fc" id="L24">        this.servicioCrearCliente = servicioCrearCliente;</span>
-<span class="fc" id="L25">    }</span>
+<span class="fc" id="L19">    public ManejadorCrearCliente( FabricaClientes fabricaClientes, ServicioCrearCliente servicioCrearCliente) {</span>
+<span class="fc" id="L20">        this.fabricaClientes = fabricaClientes;</span>
+<span class="fc" id="L21">        this.servicioCrearCliente = servicioCrearCliente;</span>
+<span class="fc" id="L22">    }</span>
 
 
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoClientes comandoClientes) {
 
-<span class="nc" id="L30">        Clientes cliente = this.fabricaClientes.crearCliente(comandoClientes);</span>
-<span class="nc" id="L31">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearCliente.ejecutar(cliente));</span>
+<span class="fc" id="L27">        Clientes cliente = this.fabricaClientes.crearCliente(comandoClientes);</span>
+<span class="fc" id="L28">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearCliente.ejecutar(cliente));</span>
 
 
     }

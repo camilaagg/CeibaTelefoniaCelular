@@ -8,8 +8,6 @@ import com.ceiba.planes.puerto.dao.DaoPlanes;
 import org.springframework.stereotype.Component;
 import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -25,28 +23,27 @@ public class DaoPlanesSql implements DaoPlanes, MapperResult {
 
 
 
-<span class="fc" id="L28">    public DaoPlanesSql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="fc" id="L29">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L30">    }</span>
+<span class="fc" id="L26">    public DaoPlanesSql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L27">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L28">    }</span>
 
     @Override
     public List&lt;DtoPlanes&gt; listarPlanes(Long days)  {
 
-<span class="nc" id="L35">        List&lt;DtoPlanes&gt; planList = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L36">        planList = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPlanes());</span>
+<span class="fc" id="L33">        List&lt;DtoPlanes&gt; planList = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPlanes());</span>
 
-<span class="nc bnc" id="L38" title="All 2 branches missed.">        if (planList.size() != 0) {</span>
-<span class="nc bnc" id="L39" title="All 2 branches missed.">            for ( DtoPlanes plan : planList) {</span>
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">        if (!planList.isEmpty()) {</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            for ( DtoPlanes plan : planList) {</span>
 
-<span class="nc" id="L41">                 plan.setPlanValue(valueCalculate(plan.getPlanValue(), days));</span>
+<span class="fc" id="L38">                 plan.setPlanValue(valueCalculate(plan.getPlanValue(), days));</span>
 
-<span class="nc" id="L43">            }</span>
+<span class="fc" id="L40">            }</span>
         } else {
 
-<span class="nc" id="L46">                throw new ExcepcionSinDatos(NO_HAY_PLANES_DISPONIBLES_EN_EL_SISTEMA);</span>
+<span class="nc" id="L43">                throw new ExcepcionSinDatos(NO_HAY_PLANES_DISPONIBLES_EN_EL_SISTEMA);</span>
 
         }
-<span class="nc" id="L49">        return planList;</span>
+<span class="fc" id="L46">        return planList;</span>
     }
 
 

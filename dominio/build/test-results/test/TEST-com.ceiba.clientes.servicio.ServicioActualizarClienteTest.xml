@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.clientes.servicio.ServicioActualizarClienteTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-05-11T14:45:12" hostname="CAMILA-GUTIERRE" time="1.673">
+  <properties/>
+  <testcase name="Deberia actualizar correctamente el cliente" classname="com.ceiba.clientes.servicio.ServicioActualizarClienteTest" time="1.67"/>
+  <testcase name="Deberia validar la existencia previa del cliente" classname="com.ceiba.clientes.servicio.ServicioActualizarClienteTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
